@@ -19,8 +19,8 @@ const onEnter = (nextState, replace) => {
 render(
   <Provider store={store}>
     <Router history={browserHistory}>
-      <Route path="/" component={LayoutContainer} />
-      <Route path="/main" component={MainContainer} onEnter={onEnter}>
+      <Route path="/~ven/" component={LayoutContainer} />
+      <Route path="/~ven/main" component={MainContainer} onEnter={onEnter}>
       </Route>
     </Router>
   </Provider>,
