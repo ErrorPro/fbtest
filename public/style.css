@@ -1,0 +1,24 @@
+//actually it might be loaded by webpack.
+//Any preprocessors you like. jscss, scss, stylus. Just need do this using loader. Had no chance do this.
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+.landing {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background-color: aliceblue;
+}
+
+.loginBtn {
+  background-color: transparent;
+  border: 1px solid black;
+  line-height: 15px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
