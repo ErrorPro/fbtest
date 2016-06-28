@@ -13,7 +13,7 @@ export default class Layout extends React.Component {
     return (
       <div>
         <div className="landing">
-          <h1>Hello, this is main page. </h1>
+          <h1>Hello, this is truckin application for you galaxy. </h1>
           <h1>Please click login to continue. </h1>
           <Login loginFn={loginFn} />
         </div>
