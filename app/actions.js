@@ -2,7 +2,7 @@ import {singIn, singUp} from './utils/api';
 import {browserHistory} from 'react-router';
 
 const authorize = async (dispatch) => {
-  FB.api('/me?fields=name,email,profile,user_friends', async (response) => {
+  FB.api('/me?fields=name,email,public_profile,user_friends', async (response) => {
     console.log(response)
     try {
       const user = await singIn({
