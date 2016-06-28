@@ -35,11 +35,6 @@ const authorize = async (dispatch) => {
 
 export const login = () => {
   return (dispatch) => {
-    dispatch({
-      type: 'LOGIN',
-      payload: {name: 'test'},
-    });
-    browserHistory.push('/~ven/main');
     FB.login((response) => {
       if (response.status === 'connected') {
         authorize(dispatch);
