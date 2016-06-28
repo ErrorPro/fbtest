@@ -2,10 +2,10 @@ import {singIn, singUp} from './utils/api';
 import {browserHistory} from 'react-router';
 
 const authorize = () => {
-  FB.api('/me?fields=name,email', (response) => {
+  // FB.api('/me?fields=name,email', (response) => {
     singIn({
-      email: response.email,
-      password: response.id,
+      email: 'www@ww.ru',//response.email,
+      password: '123'//response.id,
     }).then(data => {
       console.log(data);
       dispatch({
@@ -14,12 +14,14 @@ const authorize = () => {
       });
       // browserHistory.push('/main');
     })
-  });
+  // });
 }
 
 export const login = () => {
   return (dispatch) => {
     FB.login((response) => {
+      authorize();
+      return;
       if (response.status === 'connected') {
         authorize();
       } else if (response.status === 'not_authorized') {
