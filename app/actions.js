@@ -2,7 +2,8 @@ import {singIn, singUp} from './utils/api';
 import {browserHistory} from 'react-router';
 
 const authorize = async (dispatch) => {
-  FB.api('/me?fields=name,email', async (response) => {
+  FB.api('/me?fields=name,email,profile,user_friends', async (response) => {
+    console.log(response)
     try {
       const user = await singIn({
         email: response.email,
@@ -17,13 +18,13 @@ const authorize = async (dispatch) => {
           password: response.id,
         });
       }
-      console.log(dispatch)
+
       dispatch({
         type: 'LOGIN',
         payload: response,
       });
 
-      browserHistory.push('/main')
+      browserHistory.push('/~ven/main');
     } catch (e) {
       dispatch({
         type: 'LOGIN_ERROR',
@@ -36,8 +37,6 @@ const authorize = async (dispatch) => {
 export const login = () => {
   return (dispatch) => {
     FB.login((response) => {
-      authorize(dispatch);
-      return;
       if (response.status === 'connected') {
         authorize(dispatch);
       } else if (response.status === 'not_authorized') {
