@@ -61,6 +61,6 @@ export const login = () => {
 export const logout = () => {
   return (dispatch) => {
     dispatch({type: 'LOGOUT'});
-    browserHistory.push('/');
+    browserHistory.push('/~ven/');
   }
 };
