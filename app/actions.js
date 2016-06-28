@@ -2,8 +2,7 @@ import {singIn, singUp} from './utils/api';
 import {browserHistory} from 'react-router';
 
 const authorize = async (dispatch) => {
-  FB.api('/me?fields=name,email,public_profile,user_friends', async (response) => {
-    console.log(response)
+  FB.api('/me?fields=name,email', async (response) => {
     try {
       const user = await singIn({
         email: response.email,
@@ -36,6 +35,11 @@ const authorize = async (dispatch) => {
 
 export const login = () => {
   return (dispatch) => {
+    dispatch({
+      type: 'LOGIN',
+      payload: {name: 'test'},
+    });
+    browserHistory.push('/~ven/main');
     FB.login((response) => {
       if (response.status === 'connected') {
         authorize(dispatch);

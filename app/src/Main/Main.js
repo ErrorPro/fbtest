@@ -1,9 +1,11 @@
 import React, {PropTypes} from 'react';
+import {DriverItem} from '../DriverItem';
 
 export default class Main extends React.Component {
   static propTypes = {
-    data: PropTypes.object,
-    logout: PropTypes.object,
+    user: PropTypes.object,
+    logout: PropTypes.func,
+    data: PropTypes.array,
   }
 
   render() {
@@ -12,8 +14,19 @@ export default class Main extends React.Component {
     return (
       <div>
         <div className="main">
-          <button onClick={logout}>Logout</button>
-          <h1>Hello, this is main page. </h1>
+          <div className="user-block">
+            <div className="user">
+              <span className="fn">Current user: {'Veniamin Korolev'}</span>
+              <button onClick={logout}>Logout</button>
+            </div>
+          </div>
+          <div className="content">
+            <h1>Hello, this is page only for logged users. </h1>
+            <h3>This is our list of our drivers in your galaxy</h3>
+            {data.map(driver => (
+              <DriverItem key={driver.id} driver={driver} />
+            ))}
+          </div>
         </div>
       </div>
     )

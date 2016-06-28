@@ -1,9 +1,10 @@
 //actually it might be loaded by webpack.
 //Any preprocessors you like. jscss, scss, stylus. Just need do this using loader. Had no chance do this.
 
-html, body {
-    margin: 0;
-    padding: 0;
+body {
+  margin-top: 0px;
+  padding: 0px;
+  background-color: red;
 }
 
 .landing {
@@ -21,4 +22,50 @@ html, body {
   margin: 5px;
   border-radius: 5px;
   cursor: pointer;
+}
+
+.main {
+  display: flex;
+}
+
+.user-block {
+  flex: 1;
+}
+
+.user {
+  border-right: 1px solid;
+  padding-right: 5px;
+}
+
+.content {
+  flex: 5;
+  padding-left: 10px;
+}
+
+.fn {
+  display: block;
+  font-style: italic;
+  margin-bottom: 5px;
+}
+
+.driver {
+  padding: 10px 0;
+  border-bottom: 1px solid;
+  display: flex;
+}
+
+.info {
+  width: 100%;
+  padding: 0 10px;
+}
+
+.driver-name {
+  display: block;
+  font-size: 1.4em;
+  padding-bottom: 5px;
+}
+
+.image {
+  height: 120px;
+  width: 120px;
 }
